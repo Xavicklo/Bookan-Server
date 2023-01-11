@@ -4,6 +4,8 @@ import cors from "cors";
 
 const app = express();
 
+const port = process.env.PORT || 8080;
+
 const db = mysql2.createConnection({
   host: "containers-us-west-107.railway.app",
   user: "root",
@@ -117,6 +119,6 @@ app.put("/Bookan/:Id", (req, res) => {
 //   });
 // });
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log("Connected to backend!");
 });
